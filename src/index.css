@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 224 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 20% 12%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 224 20% 12%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 93%;
+    --accent-foreground: 224 20% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 224 20% 12%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 224 20% 12%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 221 83% 53%;
+    --sidebar-muted: 220 9% 46%;
+
+    --chart-1: 221 83% 53%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 262 83% 58%;
+    --chart-5: 0 72% 51%;
+  }
+
+  .dark {
+    --background: 224 20% 6%;
+    --foreground: 210 20% 95%;
+
+    --card: 224 18% 9%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 224 18% 9%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 224 14% 14%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 224 14% 14%;
+    --muted-foreground: 218 11% 55%;
+
+    --accent: 224 14% 16%;
+    --accent-foreground: 210 20% 95%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 224 14% 16%;
+    --input: 224 14% 16%;
+    --ring: 221 83% 53%;
+
+    --sidebar-background: 224 20% 5%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 14% 12%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 224 14% 14%;
+    --sidebar-ring: 221 83% 53%;
+    --sidebar-muted: 218 11% 55%;
+
+    --chart-1: 221 83% 53%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 262 83% 58%;
+    --chart-5: 0 72% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border;
+  }
+}
+
+/* Login page styles */
+.login-gradient {
+  background: linear-gradient(135deg, hsl(224 20% 6%) 0%, hsl(224 30% 10%) 50%, hsl(221 40% 12%) 100%);
+}
+
+.login-card {
+  background: hsl(224 18% 9% / 0.7);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  border: 1px solid hsl(224 14% 18%);
+  box-shadow:
+    0 0 0 1px hsl(224 14% 16% / 0.5),
+    0 20px 60px -10px hsl(221 83% 53% / 0.08),
+    0 40px 80px -20px hsl(0 0% 0% / 0.4);
+}
+
+.login-input {
+  background: hsl(224 18% 7%);
+  border: 1px solid hsl(224 14% 18%);
+}
+
+.login-input:focus {
+  border-color: hsl(221 83% 53% / 0.5);
+  box-shadow: 0 0 0 3px hsl(221 83% 53% / 0.12);
+}
+
+.login-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, hsl(0 0% 100% / 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+:root .login-gradient {
+  background: linear-gradient(135deg, hsl(220 20% 95%) 0%, hsl(220 30% 90%) 50%, hsl(221 40% 88%) 100%);
+}
+
+:root .login-card {
+  background: hsl(0 0% 100% / 0.75);
+  border: 1px solid hsl(220 13% 91%);
+  box-shadow:
+    0 0 0 1px hsl(220 13% 91% / 0.5),
+    0 20px 60px -10px hsl(221 83% 53% / 0.06),
+    0 40px 80px -20px hsl(0 0% 0% / 0.08);
+}
+
+:root .login-input {
+  background: hsl(0 0% 100%);
+  border: 1px solid hsl(220 13% 91%);
+}
+
+.dark .login-gradient {
+  background: linear-gradient(135deg, hsl(224 20% 6%) 0%, hsl(224 30% 10%) 50%, hsl(221 40% 12%) 100%);
+}
+
+.dark .login-card {
+  background: hsl(224 18% 9% / 0.7);
+  border: 1px solid hsl(224 14% 18%);
+  box-shadow:
+    0 0 0 1px hsl(224 14% 16% / 0.5),
+    0 20px 60px -10px hsl(221 83% 53% / 0.08),
+    0 40px 80px -20px hsl(0 0% 0% / 0.4);
+}
+
+.dark .login-input {
+  background: hsl(224 18% 7%);
+  border: 1px solid hsl(224 14% 18%);
+}
